@@ -60,7 +60,7 @@ public:
 // a. P threads produtoras, P configurável.
 void producer(Buffer &buffer, int id, int items) {
   for (int i = 0; i < items; i++) {
-    this_thread::sleep_for(chrono::milliseconds(rand() % 1000));
+    this_thread::sleep_for(chrono::milliseconds(rand() % 100)); //chrono diminuido pra 100 para agilizar a compilação
     buffer.produce(i, id);
   }
 };
@@ -68,7 +68,7 @@ void producer(Buffer &buffer, int id, int items) {
   // b. C threads consumidoras, C configurável.
 void consumer(Buffer & buffer, int id, int items) {
   for (int i = 0; i < items; i++) {
-    this_thread::sleep_for(chrono::milliseconds(rand() % 1000));
+    this_thread::sleep_for(chrono::milliseconds(rand() % 100)); //mesma coisa aqui
     buffer.consume(id);
   }
 };
