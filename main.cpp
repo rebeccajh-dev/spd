@@ -1,5 +1,4 @@
 // 1. Faça um sistema Produtor x Consumidor
-
 #include <chrono>
 #include <condition_variable>
 #include <cstdlib>
@@ -91,6 +90,8 @@ void run_test(int numeroProdutores, int numeroConsumidores, int tamanhoBuffer) {
 
   // divide corretamente entre consumidores 
   int items_per_consumer = total_items / numeroConsumidores;
+  
+  int leftover = total_items % numeroConsumidores;
 
   // criando produtores
   for (int i = 0; i < numeroProdutores; i++) {
@@ -98,8 +99,10 @@ void run_test(int numeroProdutores, int numeroConsumidores, int tamanhoBuffer) {
   }
 
   // criando consumidores
+  // distribui o resto nos primeiros consumidores
   for (int i = 0; i < numeroConsumidores; i++) {
-    consumers.emplace_back(consumer, ref(buffer), i, items_per_producer);
+    int extra = (i < leftover) ? 1 : 0;
+    consumers.emplace_back(consumer, ref(buffer), i, items_per_consumer + extra);
   }
 
   for (auto &t : producers) {
@@ -117,6 +120,7 @@ int main() {
     
   // 4 a) P == C >= 10
   run_test(10, 10, 1);  // buffer mínimo 
+
   run_test(10, 10, 5);  // buffer maior
 
   // 4 b) P == 2C >= 10
