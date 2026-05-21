@@ -15,3 +15,7 @@ Bibliotecas: **- OpeMP** > É usado para o paralelismo em memória compartilhada
 **DIEHL, P. Advanced Parallel Programming in C++. Disponível em: <https://www.diehlpk.de/blog/modern-cpp/>.**  
 **INTEL MODERN CODE PARTNER OPENMP -AULA 01. [s.l: s.n.]. Disponível em: <https://www.inf.ufrgs.br/gppd/intel-modern-code/slides/workshop-2/MCP_Pt2_Pratica.pdf>.**  
 **GEEKSFORGEEKS. Introduction to Parallel Programming with OpenMP in C++. Disponível em: <https://www.geeksforgeeks.org/cpp/introduction-to-parallel-programming-with-openmp-in-cpp/>.**  
+
+# Como compilar o programa
+g++ -fopenmp -O2 -o testes testes.cpp
+testes.exe (windows) ./testes (Linux)
