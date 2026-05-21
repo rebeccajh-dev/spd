@@ -4,16 +4,14 @@
 
 
 # Descrição
-Este projeto implementa o clássico problema de produtor-consumidor utilizando multithreading na linguagem C++.
-O sistema consiste em múltiplas threads produtoras e consumidoras que interagem por meio de um buffer compartilhado e de tamanho configurável, respeitando limites de capacidade e evitando condições de corrida.
+Este projeto implementa a solução um de redução/soma paralela em c++.
+O sistema consiste em múltiplas threads paralelas responsáveis pela execução concorrente de operações sobre vetores compartilhados, utilizando OpenMP para distribuição das tarefas entre núcleos de processamento, garantindo consistência dos resultados e evitando condições de corrida.
 
 # Tecnologias Utilizadas
 Linguagem: C++  
-Bibliotecas: **- condition variable** > É usado junto com o mutex para bloquear uma ou mais threads até que todas estejam modificadas e enviem uma notificação (usando o notify_one/notify_all);    
-**Thread** > Permite que múltiplas funções ocorram simultaneamente;  
-**Mutex** > Utilizada para proteger dados compartilhados contra acessos simultâneos por várias threads.  
+Bibliotecas: **- OpeMP** > É usado para o paralelismo em memória compartilhada, facilitando a designação de núcleos para os processos desejados;      
 
 # Referências
-**GEEKSFORGEEKS. Producer Consumer Problem and its Implementation with C++. Disponível em: <https://www.geeksforgeeks.org/operating-systems/producer-consumer-problem-and-its-implementation-with-c/>.**  
-**GEEKSFORGEEKS. Sleep Function in C++. Disponível em: <https://www.geeksforgeeks.org/cpp/sleep-function-in-cpp/>.**  
-**C++ reference - cppreference.com. Disponível em: <https://en.cppreference.com/w/cpp.html>.**  
+**DIEHL, P. Advanced Parallel Programming in C++. Disponível em: <https://www.diehlpk.de/blog/modern-cpp/>.**  
+**INTEL MODERN CODE PARTNER OPENMP -AULA 01. [s.l: s.n.]. Disponível em: <https://www.inf.ufrgs.br/gppd/intel-modern-code/slides/workshop-2/MCP_Pt2_Pratica.pdf>.**  
+**GEEKSFORGEEKS. Introduction to Parallel Programming with OpenMP in C++. Disponível em: <https://www.geeksforgeeks.org/cpp/introduction-to-parallel-programming-with-openmp-in-cpp/>.**  
